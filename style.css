@@ -204,9 +204,16 @@ span{
     border: var(--border);
     background-color: var(--bg-color);
     /* box-shadow: var(--box-shadow-inset); */
+    display: none;
    
+}
+
+.container .task-container .active .desc{
+    display: block;
 
 }
+
+
 
 
 /* 
