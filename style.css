@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+:root{
+    --green:#051c76;
+    --black:#444;
+    --light-color:#777;
+    --bg-color:#e6e6e6;
+    --border:.1rem solid rgba(0,0,0,.2);
+    --box-shadow:.4rem .4rem 1rem #ccc,
+                -.4rem -.4rem 1rem #fff;
+    --box-shadow-inset:.4rem .4rem 1rem #ccc inset,
+                      -.4rem -.4rem 1rem #fff inset;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; 
+    padding:0;
+    box-sizing: border-box;
+    outline: none; 
+    border: none;
+    /* border:0.1rem blue solid ; */
+  
+    
+}
+
+html{
+    font-size: 62.5%;
+    background-color: var(--bg-color);
+}
+
+
+span{
+    border: none;
+}
+
+.container{
+    width: 95%;
+    min-height: 80vh;
+    background-color: var(--bg-color);
+    border: var(--border);
+    margin: 3rem auto;
+    border-radius: 3rem;
+    /* box-shadow: var(--box-shadow); */
+    box-shadow: 0rem 0rem 3rem #ccc;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.title{
+    font-weight: 300;
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    color: var(--green);
+}
+
+#name-section{
+    padding: 1rem;
+    font-size: 3rem;
+}
+
+#name-section span{
+    width: 10%;
+}
+#name-section #name{
+    
+    width: 80%;
+    padding: 1rem;
+    font-size: 3rem;
+    background-color:var(--bg-color);
+}
+
+.task-input{  
+    margin: 1rem; 
+    border-radius: 2rem;
+  box-shadow: var(--box-shadow);
+ border: var(--border);
+}
+
+.task-input #input{
+    font-size: 3rem;
+    padding-left: 1rem;
+    width: 90%;
+    background-color: var(--bg-color);
+    border-radius: 2rem;
+}
+
+.task-input #btn{
+    margin: 1.5rem;
+    padding: 0.3rem;
+    width: 7rem;
+    height: 100%;
+    background-color: var(--bg-color);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    place-items: center;
+    border-radius: 2rem;
+    display: grid;
+    place-items: center;
+    border: var(--border);
+}
+
+.task-input #btn i{
+    color:var(--green);
+    font-size: 4rem;
+    border-radius: 50%;
+    background-color: var(--bg-color);
+   
+}
+
+.container .task-input .input-box{
+    display: flex;
+    border-radius: 2rem;
+    border: var(--border);
+}
+
+.container .task-input #input-desc{
+    width: 80%;
+    height: 5rem;
+    margin-top: 0.3rem;
+    /* margin-bottom: 1rem; */
+    font-size: 2rem;
+    padding-left: 2rem;
+    border-radius: 2rem;
+    background-color: var(--bg-color);
+    border: var(--border);
+    box-shadow: var(--box-shadow-inset);
+
+}
+.container .task-container .tasks{
+    margin: 3rem 1rem 3rem 1rem;
+    /* background-color: var(--bg-color); */
+    box-shadow: var(--box-shadow);
+    border-radius: 2rem;
+    display:grid;
+    place-items: center;
+   grid-template-columns: auto 1fr auto auto;
+}
+
+
+.container .task-container .tasks .check{
+    margin: 1rem;
+    height: 1.5rem;
+    width: 1.5rem;
+   
+  
+}
+
+.container .task-container .tasks .task{
+    width: 100%;
+    margin: 1rem;
+    padding:  0.5rem 0 0.5rem 1rem ;
+    background-color: var(--bg-color);
+    border-radius: 2rem;
+    border: var(--border);
+
+}
+
+
+.container .task-container .tasks .edit{
+    margin: 1rem 1rem 1rem;
+    width: 3rem;
+    height: 3rem;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    
+}
+
+
+.container .task-container .tasks .edit i{
+    color: var(--green);
+ }
+ 
+
+.container .task-container .tasks .delete{
+    margin: 1rem 2rem 1rem 0;
+    width: 3rem;
+    height: 3rem;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    
+}
+
+.container .task-container .tasks .delete i{
+   color: var(--green);
+}
+
+.container .task-container .tasks .desc{
+    /* margin-top: 1rem; */
+    grid-column: 2/4;
+    padding: 1rem;
+    margin:1rem;
+    border-radius: 2rem;
+    width: 100%;
+    border: var(--border);
+    background-color: var(--bg-color);
+    /* box-shadow: var(--box-shadow-inset); */
+   
+
+}
+
+
+/* 
+.container .task-container .tasks-main{
+   
+}
+
+.container .task-container .tasks{
+  
+    display: flex;
+    flex-direction: column;
+}
+.container .task-container .tasks #desc{
+    height: 5rem;
+    width: 80%;
+}
+
+.input-box{
+    width: 100%;
+} */
