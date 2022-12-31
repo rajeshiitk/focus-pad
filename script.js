@@ -1,15 +1,19 @@
 const tasks = document.getElementsByClassName("tasks");
-// const task = document.querySelector(".task");
 const task  =  document.getElementsByClassName("task");
-// const input = document.getElementById("input");
+const themeToggle = document.getElementsByClassName("theme-toggle");
+const theme = document.getElementsByClassName("temp");
 
-//    input.setAttribute("readonly" , "readonly");
-//    console.log(input);
+
+themeToggle[0].addEventListener("click",()=>{
+    themeToggle[0].classList.toggle("moon");
+    themeToggle[0].classList.toggle("sun");
+    theme[0].classList.toggle("theme");
+
+})
 
 
 for(let  i = 0 ; i<tasks.length ;i++){
     task[i].addEventListener("click",()=>{
-        // tasks[i].setAttribute('');
         tasks[i].classList.toggle("active");
     });
 }

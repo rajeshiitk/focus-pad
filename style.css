@@ -1,103 +1,163 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 
-:root{
-    --green:#051c76;
-    --black:#444;
-    --light-color:#777;
-    --bg-color:#e6e6e6;
-    --border:.1rem solid rgba(0,0,0,.2);
-    --box-shadow:.4rem .4rem 1rem #ccc,
-                -.4rem -.4rem 1rem #fff;
-    --box-shadow-inset:.4rem .4rem 1rem #ccc inset,
-                      -.4rem -.4rem 1rem #fff inset;
+:root {
+    --green: #081a6b;
+    --black: #444;
+    --light-color: #777;
+    --bg-color: #e6e6e6;
+    --border: .1rem solid rgba(0, 0, 0, .2);
+    --box-shadow: .4rem .4rem 1rem #ccc,
+        -.4rem -.4rem 1rem #fff;
+    --box-shadow-inset: .4rem .4rem 1rem #ccc inset,
+        -.4rem -.4rem 1rem #fff inset;
 }
 
-*{
+* {
     font-family: 'Poppins', sans-serif;
-    margin:0; 
-    padding:0;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    outline: none; 
+    outline: none;
     border: none;
     /* border:0.1rem blue solid ; */
     /* filter: invert(); */
-  
-    
+
+
 }
 
-html{
+html {
     font-size: 62.5%;
     background-color: var(--bg-color);
-    /* filter: invert()  contrast(110%) saturate(150%); */
-    
 }
 
-body{
+.theme {
+    filter: invert() contrast(110%) saturate(150%);
+
+}
+
+
+.main  {
+    padding: 2rem 0 2rem 0;
+    height: 100%;
+    width: 100%;
     position: relative;
+    display: grid;
+    place-items: center;
 }
 
-span{
+span {
     border: none;
 }
 
-.operator{
+operator {
+    /* top: 0; */
+
     width: 100%;
-    height:100% ;
+    height: 100%;
     position: absolute;
-    z-index: 15;
-    background-color: rgb(20, 129, 129);
+    /* z-index: 15; */
+    background-color: rgb(244, 151, 167);
+
 }
 
-.container{
-    position:absolute;
+.container {
+    /* mix-blend-mode:luminosity; */
     width: 95%;
     min-height: 80vh;
     background-color: var(--bg-color);
     border: var(--border);
-    margin: 3rem auto;
     border-radius: 3rem;
-    /* box-shadow: var(--box-shadow); */
     box-shadow: 0rem 0rem 3rem #ccc;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; */
-    z-index: 10;
+    justify-content: center;
 }
 
-.title{
+
+
+.title {
+    position: relative;
     font-weight: 300;
-    text-align: center;
+    /* text-align: center; */
     padding: 1rem;
     margin-bottom: 1rem;
     color: var(--green);
+    display: flex;
 }
 
-#name-section{
+
+.title #logo{
+    margin-left: 0rem;
+    height: 5rem;
+    width: 60%;
+}
+
+.title #logo img{
+    margin-left: 0rem;
+    /* height: 5rem; */
+    width: 25rem;
+}
+
+.title .theme-toggle{
+    position: absolute;
+    margin: 1rem;
+    width: 7rem;
+    height: 7rem;
+    top: 1rem;
+    right: 1rem;
+    /* height: 5rem; */
+    /* height: fit-content;
+    width: fit-content; */
+    /* background-color: rebeccapurple; */
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+}
+
+.title .moon .fa-moon{
+    display: none;
+}
+
+.title .sun .fa-sun{
+    display: none;
+}
+
+.title .theme-toggle:active{
+    box-shadow: var(--box-shadow-inset);
+}
+
+.title .theme-toggle i{
+    font-size: 5rem;
+}
+
+#name-section {
     padding: 1rem;
     font-size: 3rem;
 }
 
-#name-section span{
+#name-section span {
     width: 10%;
 }
-#name-section #name{
-    
+
+#name-section #name {
+
     width: 80%;
     padding: 1rem;
     font-size: 3rem;
-    background-color:var(--bg-color);
+    background-color: var(--bg-color);
 }
 
-.task-input{  
-    margin: 1rem; 
+.task-input {
+    margin: 1rem;
     border-radius: 2rem;
-  box-shadow: var(--box-shadow);
- border: var(--border);
- 
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+
 }
 
-.task-input #input{
+.task-input #input {
     font-size: 3rem;
     padding-left: 1rem;
     width: 90%;
@@ -105,7 +165,7 @@ span{
     border-radius: 2rem;
 }
 
-.task-input #btn{
+.task-input #btn {
     margin: 1.5rem;
     padding: 0.3rem;
     width: 7rem;
@@ -120,21 +180,28 @@ span{
     border: var(--border);
 }
 
-.task-input #btn i{
-    color:var(--green);
+
+
+.task-input #btn:active {
+    box-shadow: var(--box-shadow-inset);
+
+}
+
+.task-input #btn i {
+    color: var(--green);
     font-size: 4rem;
     border-radius: 50%;
     background-color: var(--bg-color);
-   
+
 }
 
-.container .task-input .input-box{
+.container .task-input .input-box {
     display: flex;
     border-radius: 2rem;
     border: var(--border);
 }
 
-.container .task-input #input-desc{
+.container .task-input #input-desc {
     width: 80%;
     height: 5rem;
     margin-top: 0.3rem;
@@ -147,29 +214,36 @@ span{
     box-shadow: var(--box-shadow-inset);
 
 }
-.container .task-container .tasks{
+
+.container .task-container .tasks {
     margin: 3rem 1rem 3rem 1rem;
     /* background-color: var(--bg-color); */
     box-shadow: var(--box-shadow);
     border-radius: 2rem;
-    display:grid;
+    display: grid;
     place-items: center;
-   grid-template-columns: auto 1fr auto auto;
+    grid-template-columns: auto 1fr auto auto;
 }
 
 
-.container .task-container .tasks .check{
+.container .task-container .tasks .check {
     margin: 1rem;
     height: 1.5rem;
     width: 1.5rem;
-   
-  
+    color: var(--bg-color);
+    /* background-color: var(--bg-color); */
+    border-radius: 50%;
+    /* outline: none;
+    border: none; */
+    /* box-shadow: var(--box-shadow); */
+
+
 }
 
-.container .task-container .tasks .task{
+.container .task-container .tasks .task {
     width: 100%;
     margin: 1rem;
-    padding:  0.5rem 0 0.5rem 1rem ;
+    padding: 0.5rem 0 0.5rem 1rem;
     background-color: var(--bg-color);
     border-radius: 2rem;
     border: var(--border);
@@ -177,7 +251,7 @@ span{
 }
 
 
-.container .task-container .tasks .edit{
+.container .task-container .tasks .edit {
     margin: 1rem 1rem 1rem;
     width: 3rem;
     height: 3rem;
@@ -186,16 +260,29 @@ span{
     display: grid;
     place-items: center;
     border-radius: 50%;
-    
+
+}
+
+.container .task-container .tasks .edit:active{
+    box-shadow: var(--box-shadow-inset);
 }
 
 
-.container .task-container .tasks .edit i{
+.container .task-container .tasks .edit i {
     color: var(--green);
- }
- 
+    font-size: 1.5rem;
+    border-radius: 50%;
+    padding-bottom: 0.3rem;
+    padding-left: 0.3rem;
+}
 
-.container .task-container .tasks .delete{
+
+.container .task-container .tasks .edit .iedit {
+    box-shadow: 0rem 0rem 1rem rgba(8, 26, 107, 1);
+}
+
+
+.container .task-container .tasks .delete {
     margin: 1rem 2rem 1rem 0;
     width: 3rem;
     height: 3rem;
@@ -204,35 +291,61 @@ span{
     display: grid;
     place-items: center;
     border-radius: 50%;
-    
+
 }
 
-.container .task-container .tasks .delete i{
-   color: var(--green);
+
+.container .task-container .tasks .delete:active{
+    box-shadow: var(--box-shadow-inset);
 }
 
-.container .task-container .tasks .desc{
+
+.container .task-container .tasks .delete i {
+    /* background-color: red; */
+    font-size: 1.5rem;
+    border-radius: 50%;
+    color: var(--green);
+    /* box-shadow: 0 0 0 1rem rgba(0, 255, 255, 0.2); */
+}
+
+.container .task-container .tasks .delete .idelete {
+    color: rgba(0, 255, 255, 1);
+    /* background-color: red; */
+    /* font-size: 1.5rem;
+    border-radius: 50%; */
+    /* box-shadow: 0 0 0 1rem rgba(0, 255, 255, 0.2); */
+}
+/* 
+.container .task-container .tasks .delete i:hover {
+    box-shadow: 0 0 0 1rem rgba(0, 255, 255, 0.1) inset,
+        0 0 0 1rem rgba(0, 255, 255, 0.1),
+         0 0 0 1rem rgba(0, 255, 255, 0.1) inset,
+          0 0 0 1rem rgba(0, 255, 255, 0.1);
+} */
+
+.container .task-container .tasks .desc {
     /* margin-top: 1rem; */
     grid-column: 2/4;
     padding: 1rem;
-    margin:1rem;
+    margin: 1rem;
     border-radius: 2rem;
     width: 100%;
+    /* box-shadow: var(--box-shadow-inset); */
     border: var(--border);
     background-color: var(--bg-color);
     /* box-shadow: var(--box-shadow-inset); */
     display: none;
-   
+
 }
 
-.container .task-container .active .desc{
+.container .task-container .active .desc {
     display: block;
 
 }
 
 
-::selection{
-    background-color:var(--bg-color);
+::selection {
+    background-color: var(--bg-color);
 }
 
 /* 
@@ -253,3 +366,29 @@ span{
 .input-box{
     width: 100%;
 } */
+
+
+
+@media screen and (max-width: 576px) {
+    html{
+        font-size: 50%;
+    }
+
+    .title .theme-toggle{
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .title .theme-toggle i{
+        font-size: 4rem;
+    }
+
+    
+.title #logo img{
+    margin-left: 1rem;
+    margin-top: 1rem;
+    /* height: 5rem; */
+    width: 20rem;
+}
+    
+}
