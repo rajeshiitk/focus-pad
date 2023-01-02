@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class=" temp theme">
+<html lang="en" class=" temp theme" oncontextmenu="" onkeydown="" onmousedown="">
 
 <head>
     <meta charset="UTF-8">
@@ -12,9 +12,9 @@
 
 <body >
     <div class="main">
-        <div class="operator">
+        <div class=" optr  ">   <!-- color -->
         </div>
-        <div class="container">
+        <div class="container ">    <!-- blend -->
             <div class="title">
                 <!-- <h1>Focus pad</h1> -->
                 <span id="logo">
@@ -68,7 +68,7 @@
                 <div class="tasks">
                     <input class="check" type="checkbox">
                     <input type="text" name="task" class="task">
-                    <span class="edit"><i class="fa-regular fa-pen-to-square"></i></span>
+                    <span onclick="editFunc(this.id)" class="edit"><i class="fa-regular fa-pen-to-square"></i></span>
                     <span class="delete"><i class="fa-solid fa-trash-can"></i></span>
                     <input type="text" name="desc" class="desc">
                 </div>

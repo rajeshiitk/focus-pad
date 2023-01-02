@@ -49,19 +49,41 @@ span {
     border: none;
 }
 
-operator {
-    /* top: 0; */
+.strike-line{
+    text-decoration: line-through;
+    color: green;
+}
 
+
+.operator {
     width: 100%;
     height: 100%;
     position: absolute;
-    /* z-index: 15; */
-    background-color: rgb(244, 151, 167);
+    /* background-color: rgba(244, 151, 167 , 1); */
 
 }
 
+/* ********************************** */
+
+.main .blend{
+    mix-blend-mode: luminosity;
+}
+/* 
+.main .color{
+    background-color: rgba(244, 151, 167 , 1);
+
+
+} */
+
+/* 
+.main .color{
+    background-color:blue;
+
+
+} */
+
 .container {
-    /* mix-blend-mode:luminosity; */
+    /* mix-blend-mode: luminosity; */
     width: 95%;
     min-height: 80vh;
     background-color: var(--bg-color);
@@ -89,8 +111,10 @@ operator {
 .title #logo{
     margin-left: 0rem;
     height: 5rem;
-    width: 60%;
+    width: 50%;
+    cursor: pointer;
 }
+
 
 .title #logo img{
     margin-left: 0rem;
@@ -105,15 +129,12 @@ operator {
     height: 7rem;
     top: 1rem;
     right: 1rem;
-    /* height: 5rem; */
-    /* height: fit-content;
-    width: fit-content; */
-    /* background-color: rebeccapurple; */
     display: grid;
     place-items: center;
     border-radius: 50%;
     box-shadow: var(--box-shadow);
     border: var(--border);
+    cursor: pointer;
 }
 
 .title .moon .fa-moon{
@@ -178,6 +199,7 @@ operator {
     display: grid;
     place-items: center;
     border: var(--border);
+    cursor: pointer;
 }
 
 
@@ -215,6 +237,10 @@ operator {
 
 }
 
+.container .task-container{
+    min-height: 50vh;
+}
+
 .container .task-container .tasks {
     margin: 3rem 1rem 3rem 1rem;
     /* background-color: var(--bg-color); */
@@ -243,11 +269,14 @@ operator {
 .container .task-container .tasks .task {
     width: 100%;
     margin: 1rem;
-    padding: 0.5rem 0 0.5rem 1rem;
+    padding: 0.3rem 0.5rem 0.3rem 1rem;
     background-color: var(--bg-color);
     border-radius: 2rem;
     border: var(--border);
-
+    font-size: 2.5rem;
+    cursor: pointer;
+    /* box-shadow: var(--box-shadow); */
+    /* box-shadow: var(--box-shadow-inset); */
 }
 
 
@@ -260,6 +289,7 @@ operator {
     display: grid;
     place-items: center;
     border-radius: 50%;
+    cursor: pointer;
 
 }
 
@@ -291,6 +321,7 @@ operator {
     display: grid;
     place-items: center;
     border-radius: 50%;
+    cursor: pointer;
 
 }
 
@@ -326,7 +357,7 @@ operator {
 .container .task-container .tasks .desc {
     /* margin-top: 1rem; */
     grid-column: 2/4;
-    padding: 1rem;
+    padding: 0.3rem 0.5rem 0.3rem 1rem;
     margin: 1rem;
     border-radius: 2rem;
     width: 100%;
@@ -335,6 +366,8 @@ operator {
     background-color: var(--bg-color);
     /* box-shadow: var(--box-shadow-inset); */
     display: none;
+    font-size: 2rem;
+    cursor: auto;
 
 }
 
@@ -389,6 +422,11 @@ operator {
     margin-top: 1rem;
     /* height: 5rem; */
     width: 20rem;
+}   
 }
-    
-}
+/* 
+@media screen and (min-width: 820px) {
+   
+
+   
+} */
