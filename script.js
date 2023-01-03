@@ -145,8 +145,8 @@ for (let i = 0; i < tasks.length; i++) {
 // readonly toggle in task name and desc of task
 function editFunc(id) {
     typeof id;
-    const idTask = "task-" + id.slice(5, 6);
-    const idDesc = "desc-" + id.slice(5, 6);
+    const idTask = "task-" + id.slice(5);
+    const idDesc = "desc-" + id.slice(5);
     const taskEdit = document.getElementById(idTask);
     const descEdit = document.getElementById(idDesc);
     taskEdit.toggleAttribute("readonly")
@@ -156,7 +156,7 @@ function editFunc(id) {
 
 function checkFunc(id) {
     const idCheck = document.getElementById(id);
-    const idTask = "task-" + id.slice(6, 7);
+    const idTask = "task-" + id.slice(6);
     const taskStrike = document.getElementById(idTask);
     // taskStrike.innerHTML = (taskStrike.value).strike();
     // console.log((taskStrike.value).strike());
@@ -164,7 +164,7 @@ function checkFunc(id) {
     // taskStrike.classList.add("strike-line");
     taskStrike.classList.toggle("strike-line");
 
-    idDesc = "desc-" + id.slice(6, 7);
+    idDesc = "desc-" + id.slice(6);
     const descStrike = document.getElementById(idDesc);
     descStrike.classList.toggle("strike-line");
 }
