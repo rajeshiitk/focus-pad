@@ -81,13 +81,12 @@ function taskFunction(value,index) {
     tempEdit.setAttribute("class", "edit edit-icon-toggle");
     tempEdit.setAttribute("id", `edit-${index}`);
     tempEdit.setAttribute("onclick", "editFunc(this.id)");
-
+     
     
     const tempIEdit = document.createElement("i");
     tempIEdit.setAttribute("class", "fa-regular fa-pen-to-square");
     const tempIEdit2 = document.createElement("i");
     tempIEdit2.setAttribute("class", "fa-solid fa-circle-check");
-
 
     tempEdit.append(tempIEdit);
     tempEdit.append(tempIEdit2);
@@ -164,7 +163,7 @@ btn.addEventListener("click", (e) => {
     taskArray.push({
        head: taskInput.value,
        description: descInput.value,
-       tick : true
+       tick : true      
     });
      
     localStorage.setItem("taskArray", JSON.stringify(taskArray));

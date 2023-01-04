@@ -300,10 +300,10 @@ span {
 
 .container .task-container .tasks .edit i {
     color: var(--green);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     border-radius: 50%;
-    padding-bottom: 0.3rem;
-    padding-left: 0.3rem;
+    /* padding-bottom: 0.3rem;
+    padding-left: 0.3rem; */
 }
 
 
@@ -313,14 +313,11 @@ span {
 
 .container .task-container .tasks .edit-icon-toggle .fa-circle-check{
     display: none;
-    margin:0;
-    padding: 0;
+    /* background-color: var(--green); */
 }
 
 .container .task-container .tasks .done-icon-toggle .fa-pen-to-square{
     display: none;
-    display: grid;
-    place-items: center;
 }
 
 
