@@ -311,6 +311,18 @@ span {
     box-shadow: 0rem 0rem 1rem rgba(8, 26, 107, 1);
 }
 
+.container .task-container .tasks .edit-icon-toggle .fa-circle-check{
+    display: none;
+    margin:0;
+    padding: 0;
+}
+
+.container .task-container .tasks .done-icon-toggle .fa-pen-to-square{
+    display: none;
+    display: grid;
+    place-items: center;
+}
+
 
 .container .task-container .tasks .delete {
     margin: 1rem 2rem 1rem 0;
