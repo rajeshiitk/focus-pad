@@ -300,15 +300,24 @@ span {
 
 .container .task-container .tasks .edit i {
     color: var(--green);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     border-radius: 50%;
-    padding-bottom: 0.3rem;
-    padding-left: 0.3rem;
+    /* padding-bottom: 0.3rem;
+    padding-left: 0.3rem; */
 }
 
 
 .container .task-container .tasks .edit .iedit {
     box-shadow: 0rem 0rem 1rem rgba(8, 26, 107, 1);
+}
+
+.container .task-container .tasks .edit-icon-toggle .fa-circle-check{
+    display: none;
+    /* background-color: var(--green); */
+}
+
+.container .task-container .tasks .done-icon-toggle .fa-pen-to-square{
+    display: none;
 }
 
 
