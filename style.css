@@ -24,10 +24,30 @@
 
 
 }
+/* 
+::-moz-selection { 
+    color: red;
+    background: yellow;
+  }
+  
+  ::selection {
+    color: red;
+    background: yellow;
+  } */
+  html {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
 html {
     font-size: 62.5%;
     background-color: var(--bg-color);
+    scroll-behavior: smooth;
 }
 
 .theme {
@@ -60,6 +80,7 @@ span {
     height: 100%;
     position: absolute;
     /* background-color: rgba(244, 151, 167 , 1); */
+    /* overflow: hidden; */
 
 }
 
@@ -156,18 +177,39 @@ span {
 #name-section {
     padding: 1rem;
     font-size: 3rem;
+    display: flex;
+    position:relative;
 }
 
 #name-section span {
     width: 10%;
+    display:grid;
+    place-items: center;
+  
 }
 
 #name-section #name {
-
     width: 80%;
     padding: 1rem;
     font-size: 3rem;
     background-color: var(--bg-color);
+}
+
+.fa-circle-check{
+    color: var(--green);
+    display: none;
+}
+
+.nameDoneToggle .fa-circle-check{
+    color: var(--green);
+    display: block;
+    display: grid;
+    place-items: center;
+    margin-right: 0.5rem;
+    position: absolute;
+    right: 3rem;
+    top: 0;
+    bottom: 0;
 }
 
 .task-input {
@@ -175,7 +217,6 @@ span {
     border-radius: 2rem;
     box-shadow: var(--box-shadow);
     border: var(--border);
-
 }
 
 .task-input #input {
@@ -227,7 +268,6 @@ span {
     width: 80%;
     height: 5rem;
     margin-top: 0.3rem;
-    /* margin-bottom: 1rem; */
     font-size: 2rem;
     padding-left: 2rem;
     border-radius: 2rem;
@@ -243,7 +283,6 @@ span {
 
 .container .task-container .tasks {
     margin: 3rem 1rem 3rem 1rem;
-    /* background-color: var(--bg-color); */
     box-shadow: var(--box-shadow);
     border-radius: 2rem;
     display: grid;
@@ -257,13 +296,7 @@ span {
     height: 1.5rem;
     width: 1.5rem;
     color: var(--bg-color);
-    /* background-color: var(--bg-color); */
     border-radius: 50%;
-    /* outline: none;
-    border: none; */
-    /* box-shadow: var(--box-shadow); */
-
-
 }
 
 .container .task-container .tasks .task {
@@ -275,8 +308,6 @@ span {
     border: var(--border);
     font-size: 2.5rem;
     cursor: pointer;
-    /* box-shadow: var(--box-shadow); */
-    /* box-shadow: var(--box-shadow-inset); */
 }
 
 
@@ -302,8 +333,6 @@ span {
     color: var(--green);
     font-size: 1.8rem;
     border-radius: 50%;
-    /* padding-bottom: 0.3rem;
-    padding-left: 0.3rem; */
 }
 
 
@@ -313,9 +342,12 @@ span {
 
 .container .task-container .tasks .edit-icon-toggle .fa-circle-check{
     display: none;
-    /* background-color: var(--green); */
 }
 
+
+.container .task-container .tasks .done-icon-toggle .fa-circle-check{
+    display: block;
+}
 .container .task-container .tasks .done-icon-toggle .fa-pen-to-square{
     display: none;
 }
@@ -341,19 +373,14 @@ span {
 
 
 .container .task-container .tasks .delete i {
-    /* background-color: red; */
     font-size: 1.5rem;
     border-radius: 50%;
     color: var(--green);
-    /* box-shadow: 0 0 0 1rem rgba(0, 255, 255, 0.2); */
 }
 
 .container .task-container .tasks .delete .idelete {
     color: rgba(0, 255, 255, 1);
-    /* background-color: red; */
-    /* font-size: 1.5rem;
-    border-radius: 50%; */
-    /* box-shadow: 0 0 0 1rem rgba(0, 255, 255, 0.2); */
+  
 }
 /* 
 .container .task-container .tasks .delete i:hover {
@@ -364,16 +391,13 @@ span {
 } */
 
 .container .task-container .tasks .desc {
-    /* margin-top: 1rem; */
     grid-column: 2/4;
     padding: 0.3rem 0.5rem 0.3rem 1rem;
     margin: 1rem;
     border-radius: 2rem;
     width: 100%;
-    /* box-shadow: var(--box-shadow-inset); */
     border: var(--border);
     background-color: var(--bg-color);
-    /* box-shadow: var(--box-shadow-inset); */
     display: none;
     font-size: 2rem;
     cursor: auto;
@@ -382,32 +406,12 @@ span {
 
 .container .task-container .active .desc {
     display: block;
-
 }
 
 
 ::selection {
     background-color: var(--bg-color);
 }
-
-/* 
-.container .task-container .tasks-main{
-   
-}
-
-.container .task-container .tasks{
-  
-    display: flex;
-    flex-direction: column;
-}
-.container .task-container .tasks #desc{
-    height: 5rem;
-    width: 80%;
-}
-
-.input-box{
-    width: 100%;
-} */
 
 
 

@@ -26,9 +26,87 @@ logo.addEventListener("click", () => {
 });
 
 
-// local storage
-// localStorage.getItem("taskArray") ? JSON.parse(localStorage.getItem("taskArray")) :
-// {head:"RAJESH", description:"lhc", tick: true  }
+// placeholder animation
+
+
+let i=0;
+// let j=0;
+const todaysTask = "Todays Task";
+// const descri = "description";
+let placeholder = "";
+// let placeholderdesc = "";
+
+let id;
+  function typing(){
+    placeholder += todaysTask.charAt(i);
+    // placeholder.
+    const taskInput = document.getElementById("input");
+    taskInput.setAttribute("placeholder",placeholder);
+    // taskInput.style.textDecoration
+    i++;
+    id =  setTimeout(typing,80);
+    // console.log(i) ; 
+    if(placeholder === todaysTask)  {
+        clearTimeout(id);
+    }
+}
+typing();
+
+// function destyping(){
+//     placeholderdesc += descri.charAt(i);
+//     // placeholder.
+//     // console.log(placeholderdesc)
+//     const descInput = document.getElementById("input-desc");
+//     descInput.setAttribute("placeholder",placeholderdesc);
+//     // descInput.style.textDecoration
+//     j++;
+//     setTimeout(destyping,100);    
+// }
+// // destyping();
+
+
+// function revTyping(){
+//     // placeholder = 
+//     placeholder = todaysTask.slice(0,i);
+//     // console.log(placeholder);
+//     const taskInput = document.getElementById("input");
+//     taskInput.setAttribute("placeholder",placeholder);
+//     i--;
+//     // setTimeout(revTyping,700);    
+// }
+
+// typing().then( revTyping());
+
+
+{
+let naam = localStorage.getItem("naam") ? localStorage.getItem("naam") : "";
+const nameInput = document.getElementById("name") ;
+const nameSection = document.getElementById("name-section");
+const nameDone = document.createElement("i");
+nameDone.setAttribute("class","fa-solid fa-circle-check");
+nameSection.append(nameDone);
+
+naam = nameInput.value;
+
+nameInput.addEventListener("focus",()=>{
+    nameSection.setAttribute("class", "nameDoneToggle");
+});
+
+nameDone.addEventListener("click",()=>{
+    naam = nameInput.value;
+    localStorage.setItem("name", naam);
+    nameSection.classList.remove("nameDoneToggle");
+});
+
+nameInput.value = localStorage.getItem("name");
+
+
+}
+
+
+
+
+
 const taskArray =localStorage.getItem("taskArray") ? JSON.parse(localStorage.getItem("taskArray")) :  [] ; 
 
 
@@ -68,11 +146,10 @@ function taskFunction(value,index) {
     tempTask.setAttribute("type", "text");
     tempTask.setAttribute("class", "task");
     tempTask.setAttribute("id", `task-${index}`);
-
+   
     tempTask.setAttribute("readonly", true);
-    // tempTask.value = localStorage.getItem("taskArray.head[index]");
        tempTask.value = value.head;
-
+      
     // tempTask.value = taskInput.value;
     addTaskList.append(tempTask);
 
@@ -114,26 +191,13 @@ function taskFunction(value,index) {
     tempDesc.setAttribute("readonly", "readonly");
     tempDesc.setAttribute("id", `desc-${index}`);
 
-    // function stateFunc(){
     if(value.tick === false){
         const id = "desc-" + index;
         const id2 = "task-" + index;
-        // console.log(id);
-        // const taskstrike = document.getElementById(id);
-        // console.log(taskstrike);
-        // tempDesc.classList.toggle("strike-line");
-        // tempTask.classList.toggle("strike-line");
-        // tempCheckBox.toggleAttribute("checked");
-        // tempDesc.classList.
         tempDesc.setAttribute("class","desc strike-line");
         tempTask.setAttribute("class","task strike-line");
         tempCheckBox.setAttribute("checked" , "checked");
-
-
-        // taskstrike.classList.toggle("strike-line");
     }
-// }
-
 
     // tempDesc.value = descInput.value;
     tempDesc.value = value.description;
@@ -141,9 +205,6 @@ function taskFunction(value,index) {
 
     // Prepend addTaskList in taskContainer
     taskContainer[0].prepend(addTaskList);
-
-
-    // index++;
 }
 
 
@@ -157,21 +218,18 @@ function removeTasks() {
 
 btn.addEventListener("click", (e) => {
     e.preventDefault();
-    // taskFunction();
-    // console.log(taskInput.value);
+    if(taskInput.value == ""){
+        return null;
+    }
     removeTasks();
     taskArray.push({
-       head: taskInput.value,
+       head: (taskInput.value).toUpperCase(),
        description: descInput.value,
        tick : true      
     });
      
     localStorage.setItem("taskArray", JSON.stringify(taskArray));
-    // console.log(JSON.parse(localStorage.getItem(taskArray)));
-    // console.log(taskArray);
-
     printTasks();
-
     accord();
 });
 
@@ -182,8 +240,7 @@ btn.addEventListener("click", (e) => {
 
 
 function accord() {
-
-    for (let i = 0; i < tasks.length; i++) {
+    for (let i = 0; i <= tasks.length; i++) {
         task[i].addEventListener("click", () => {
             tasks[i].classList.toggle("active");
         });
@@ -221,7 +278,6 @@ function editFunc(id) {
     const descEdit = document.getElementById(idDesc);
     taskEdit.toggleAttribute("readonly");
     descEdit.toggleAttribute("readonly");
-    console.log(taskEdit.value);
     taskArray[id.slice(5)].head = taskEdit.value;
     taskArray[id.slice(5)].description = descEdit.value;
 
