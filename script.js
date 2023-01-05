@@ -25,7 +25,6 @@ logo.addEventListener("click", () => {
     blend[0].classList.toggle("blend");
 });
 
-
 // placeholder animation
 
 
@@ -146,6 +145,9 @@ function taskFunction(value,index) {
     tempTask.setAttribute("type", "text");
     tempTask.setAttribute("class", "task");
     tempTask.setAttribute("id", `task-${index}`);
+    tempTask.setAttribute("onclick", "accordFunc(this.id)");
+
+
    
     tempTask.setAttribute("readonly", true);
        tempTask.value = value.head;
@@ -252,6 +254,15 @@ for (let i = 0; i < tasks.length; i++) {
     task[i].addEventListener("click", () => {
         tasks[i].classList.toggle("active");
     });
+}
+
+function accordFunc(ayd){
+    const iddd = ayd.slice(5);
+    console.log(iddd);
+    // task[i].addEventListener("click", () => {
+        console.log(tasks[iddd]);
+        tasks[iddd].classList.toggle("active");
+    // });
 }
 
 // document.keydown((e)=>{
